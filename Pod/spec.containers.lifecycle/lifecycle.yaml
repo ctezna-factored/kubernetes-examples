@@ -6,6 +6,7 @@ metadata:
 spec:
   containers:
     - image: nginx
+      name: lifecycle-container
       lifecycle:
         postStart:
           exec:
@@ -13,4 +14,4 @@ spec:
         preStop:
           exec:
             command: ["/bin/sh", "-c", "nginx -s quit; while killall -0 nginx; do sleep 1; done"]
-      name: lifecycle-container
+      
