@@ -6,6 +6,7 @@ spec:
   selector:
     matchLabels:
       app: store
+      environment: production
   replicas: 3
   template:
     metadata:
